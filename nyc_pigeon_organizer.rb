@@ -22,6 +22,5 @@ def nyc_pigeon_organizer(data)
       end
     end
   end
-  binding.pry
   data_by_name
 end
