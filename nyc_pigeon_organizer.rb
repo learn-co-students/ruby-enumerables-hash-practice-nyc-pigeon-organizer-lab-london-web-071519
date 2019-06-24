@@ -10,13 +10,18 @@ def nyc_pigeon_organizer(data)
 # binding.pry
       names.each do |name|
 # binding.pry
-        data_by_name[name] = {:colour => [], :gender => [], :lives => []}
+        data_by_name[name] = {:color => [], :gender => [], :lives => []}
       end
     end
   end
-  data_by_name.each_key do |name|
-    data.each_pair do |attribute, type|
-binding.pry
+  data_by_name.each do |name, attribute|
+    data.each_pair do |attribute2, type|
+      type.each do |a, b|
+# binding.pry
+        if b.include?(name)
+          data_by_name[name][attribute2] << a.to_s
+        end
+      end
     end
   end
   # data_by_name.each do |p_name, info|
